@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="../plugins/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../plugins/css/all.min.css" rel="stylesheet">
+    <link href="../plugins/css/tiny-slider.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+    <title>Shop</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../plugins/css/main.css">
+    <script>
+        const systemInfo = {CURRENT_URL: "products", API_URL: "./api/", API_KEY: "e5f199a921341261b713f49defc1f232", LOADER_GIF: "<img src='assets/images/loader.gif' class='loader-img'>"}
+    </script>
+</head>
+
+<body>
+
+<!-- Start Header/Navigation -->
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">Shop<span>.</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                الرئيسية
+                </a>
+            </li>
+<li class="nav-item">
+                <a class="nav-link" href="products.html">
+                التسوق
+                </a>
+            </li>
+<li class="nav-item">
+                <a class="nav-link" href="registration1.html">
+                إنشاء حساب
+                </a>
+            </li>
+<li class="nav-item">
+                <a class="nav-link" href="registration2.html">
+                دخول
+                </a>
+            </li>            </ul>
+
+            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                <li><a class="nav-link" href="./?page=profile"><img src="../plugins/svg/user.svg"></a></li>
+                <li><a class="nav-link" href="./?page=orders"><img src="../plugins/svg/cart.svg"></a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+<div class="hero">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-12 text-center">
+                <h1>إنشاء حساب</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="new_arrivals">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-5">
+                <form action="#" method="post" class="php-email-form system-data-form">
+                    <input type="hidden" value="e5f199a921341261b713f49defc1f232" name="API_KEY">
+                    <input type="hidden" value="frontpage_registration" name="call">
+                    <div class="message form-message"></div>
+                    <div class="form-group">
+                        <label for="username">username</label>
+                        <input type="text" class="form-control" name="username" id="username" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">email</label>
+                        <input type="email" class="form-control" name="email" id="email" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">role</label>
+                        <select class="form-control select-data-effect click-function-activated" data-effects=".role-columns" name="role" id="role" data-attr="data-id" required="">
+                            <option value="0">حدد</option>
+                            <option value="8">company</option><option value="9">client</option>                            </select>
+                    </div>
+                    <div class="role-columns click-function-activated" data-type="role-columns" data-id="0"></div>
+                    <div class="form-group">
+                        <label for="password">password</label>
+                        <input type="password" class="form-control" name="password" id="password" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="c-password">confirm password</label>
+                        <input type="password" class="form-control" name="c-password" id="c-password" required="">
+                    </div>
+                    <div class="text-center submit-in">
+                        <button type="button" class="btn btn-primary-hover-outline marg-10">
+                            sign
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ##### New Arrivals Area Start ##### -->
+
+<!-- Start Footer Section -->
+<footer class="footer-section">
+    <div class="container relative">
+
+        <div class="row g-5 mb-5">
+            <div class="col-lg-4">
+                <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Shop<span>.</span></a></div>
+                <p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant</p>
+
+            </div>
+
+            <div class="col-lg-4">
+                <div class="row links-wrap">
+                    <ul class="list-unstyled">
+                        <li class="">
+                <a class="" href="../index.html">
+                الرئيسية
+                </a>
+            </li>
+<li class="">
+                <a class="" href="./?page=products">
+                التسوق
+                </a>
+            </li>
+<li class="">
+                <a class="" href="./?page=registration">
+                إنشاء حساب
+                </a>
+            </li>
+<li class="">
+                <a class="" href="./?page=login">
+                دخول
+                </a>
+            </li>                    </ul>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="subscription-form">
+                    <h3 class="d-flex align-items-center"><span class="me-1"><img src="../plugins/svg/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+
+                    <form action="#" class="row g-3">
+                        <div class="col-5">
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="col-5">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-primary">
+                                <span class="fa fa-paper-plane"></span>
+                            </button>
+                        </div>
+                    </form>
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-top copyright">
+            <div class="row pt-4">
+                <div class="col-lg-6">
+                    <p class="mb-2 text-center text-lg-start">
+                        Copyright ©<script>document.write(new Date().getFullYear());</script>2024. All Rights Reserved.
+                    </p>
+                </div>
+
+                <div class="col-lg-6 text-center text-lg-end">
+                    <ul class="list-unstyled d-inline-flex ms-auto">
+                        <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- End Footer Section -->
+
+
+<script src="../plugins/js/bootstrap.bundle.min.js"></script>
+<script src="../plugins/js/tiny-slider.js"></script>
+<script src="../plugins/js/custom.js"></script>
+<script src="../plugins/js/all.min.js"></script>
+    <script>
+        const alertType = "alert";
+    </script>
+    <script src="../plugins/js/jquery-1.11.2.min.js"></script>
+    <script src="../plugins/js/master.js"></script>
+    <script src="../plugins/js/main.js"></script>
+    <script>
+        $(document).ready(function(){parent.activatePageControls()});
+    </script>
+    
+
+
+</body>
+</html>
